@@ -1,0 +1,163 @@
+@import "susy";
+@import "normalize";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+@import "colours";
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  );
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  @include container();
+}
+
+aside {
+  @include span(2 of 8 nest);
+  nav{
+    @include span(isolate 4 at 2 of 6);
+  }
+  address{
+    @include span(6 of 6);
+    .email, .github, .mobile, .twitter {
+      @include span(1 of 4);
+    }
+  }
+}
+.main {
+  @include span(6 of 8 nest last);
+  header{
+    @include span(6 of 6);
+  }
+  .portrait {
+    @include span(6 of 6 nest);
+    img {
+      @include span(isolate 2 at 3 of 6);
+    }
+  }
+  .blurb {
+    @include container(80%);
+  }
+  .about {
+    @include span(6 of 6 nest);
+  }
+  h2 {
+      @include span(6 of 6);
+    }
+  .gallery {
+    @include container();
+    img {
+      @include gallery(2 of 6);
+    }
+  }
+  a[href="#top"] {
+    @include span(isolate 4 at 5 of 12);
+  }
+}
+aside{
+  position: fixed;
+  height: 100vh;
+  background-color: #009CFF;
+  color: #FFF;
+  nav {
+    position: relative;
+    margin-top: 10vh;
+    font-size: 4vh;
+    text-decoration: none;
+    list-style: none;
+    li{
+      text-align: left;
+      margin: 2em auto;
+    }
+  }
+  address{
+    position: absolute;
+    bottom: 20px;
+    left: auto;
+    margin: 0 auto;
+    a[href]{
+      color: #FFF;
+      text-align: center;
+    }
+  }
+}
+
+.main {
+  margin-top: 20px;
+  header{
+    text-align: center;
+  }
+  .portrait {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .blurb {
+    p {
+      margin-top: 12px;
+    }
+  }
+  h2 {
+    margin-top: 60px;
+    text-align: center;
+  }
+  .gallery{
+    text-align: center;
+    img {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  a[href="#top"], a[href="#top"]:visited {
+    text-align:center;
+    text-decoration: none;
+    font-style: none;
+    background-color: $blue;
+    color: $white;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+}
+
+.grid-sizer,
+.grid-item {
+  width: 20%;
+}
+/**
+ * Icons
+ */
+.github, .mobile, .email, .twitter {
+  position: relative;
+  font-style: none;
+  text-decoration: none;
+}
+.email:before,
+.mobile:before,
+.twitter:before,
+.github:before{
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 6vh;
+}
+.email:before {
+  content: "\f0e0";
+}
+.mobile:before {
+  content: "\f10b";
+}
+.twitter:before {
+  content: "\f099";
+}
+.github:before {
+  content: "\f09b";
+}
