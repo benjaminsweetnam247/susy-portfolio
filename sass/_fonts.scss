@@ -1,0 +1,8 @@
+$heading-size: 2.9em;
+$heading-colour: $blue;
+$font-size: 26px;
+
+@heading {
+  font-size: $heading-size;
+  color: $heading-colour;
+}

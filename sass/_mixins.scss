@@ -1,0 +1,5 @@
+@import "fonts";
+@mixin heading {
+  font-size: $heading-size;
+  color: $heading-colour;
+}
